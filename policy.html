@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>株式会社エスコード</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="CA">株式会社エスコード<br><span class="sub">S-CODE Inc.</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="policy.html">POLICY</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".main-nav");
+
+    // メニューアイコンをクリックで表示切り替え
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove("show");
+      }
+    });
+  </script>
+   <section class="news-section">
+    <div class="newstext">
+      <p>ポリシー</p>
+      <h3>POLICY</h3>
+    </div>
+    <hr>
+    <div class="polisy-text">
+      <p>安心してご利用いただくために、私たちの姿勢とお約束を明記しています。</p>
+      <p>株式会社エスコードでは、クラウドサービスを安心してご利用いただくため、情報の取り扱いや業務における基本的な方針を以下のとおり定めています。</p>
+    </div>
+    <section class="policy">
+      <div class="policy-main">
+        <h3>▶プライバシーポリシー(個人情報保護方針)</h3>
+        <p>当社は、お客様の個人情報の保護を最重要事項のひとつとして位置づけています。<br>
+          取得する情報は、利用目的を明確にしたうえで、適切に管理・利用し、第三者に無断提供することは一切ありません</p>
+        <li>利用目的の明示と同意</li>
+        <li>安全管理措置の徹底</li>
+        <li>委託先への適切な監督</li>
+        <li>開示・訂正・削除への対応</li>
+        <p class="detail">＞ 詳細は「個人情報保護方針」全文をご覧ください</p>
+      </div>
+      <div class="policy-main">
+        <h3>▶セキュリティ方針</h3>
+        <p>当社が提供するクラウドサービスでは、以下のようなセキュリティ対策を実施し、お客様のデータを保護しています。<p>
+        <li>通信の暗号化（SSL対応）</li>
+        <li>定期的な脆弱性診断</li>
+        <li>権限管理機能の提供</li>
+        <li>バックアップと障害復旧体制の整備</li>
+        <p class="detail">お客様が安心して業務に集中できるよう、万全のセキュリティ体制でサービスを運用しています。</p>
+      </div>
+      <div class="policy-main">
+        <h3>▶サービス提供方針・倫理規定</h3>
+        <p>当社は、すべてのお客様に対して公平かつ誠実なサービス提供を行うとともに、以下の行為を行わないことを宣言します</p>
+        <li>誇張・虚偽のある広告・営業行為</li>
+        <li>不当な差別的対応・選別</li>
+        <li>お客様の許可なく情報を使用・提供</li>
+        <li>強引な営業・契約の強制</li>
+        <p class="detail">私たちは「現場の課題解決」を第一に考え、長期的な信頼関係を築くことを重視しています。</p>
+      </div>
+      <div class="policy-main">
+        <h3>▶コンプライアンスと社会的責任</h3>
+        <p>エスコードは企業としての社会的責任（CSR）を重視し、法令順守（コンプライアンス）を徹底しています。</p>
+        <li>労働法・個人情報保護法・著作権法等の遵守</li>
+        <li>社内研修による意識向上</li>
+        <li>クライアント・パートナー企業との健全な取引</li>
+        <li>地域・業界への貢献活動</li>
+      </div>
+    </section>
+   </section>
+  </body>
+  <footer class="footer-wrapper">
+    <div class="footer-message-area">
+      <p class="footer-message">その紙、クラウドで生まれ変わる。<br>「使えるIT」を、現場の皆様のために。</p>
+      
+      <nav class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="service.html">SERVICE</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="news.html">NEWS</a>
+        <a href="policy.html">POLICY</a>
+      </nav>
+  
+      <div class="footer-consult">
+        <div class="consult-icon">✉</div>
+        <a href="contact.html">無料相談はこちら</a>
+        <div class="consult-arrow">＞</div>
+      </div>
+    </div>
+  
+    <div class="footer-company-info">
+      <h2 class="company-name">株式会社エスコード</h2>
+      <div class="company-details">
+        <div class="company-left">
+          <p>〒123-4567</p>
+          <p>東京都中央区〇〇ビル12</p>
+          <p>mail : info@escode.co.jp</p>
+        </div>
+        <div class="company-right">
+          <p>受付時間：平日9：00~18：00</p>
+          <p>TEL：03-1234-5678</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-copyright">
+      <p>@ESCODE Inc. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  </html>

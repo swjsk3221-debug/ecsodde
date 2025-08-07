@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>株式会社エスコード</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="CA">株式会社エスコード<br><span class="sub">S-CODE Inc.</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="policy.html">POLICY</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".main-nav");
+
+    // メニューアイコンをクリックで表示切り替え
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove("show");
+      }
+    });
+  </script>
+
+
+  <section class="news-article">
+    <div class="article1">
+      <p>2025.01.08</p>
+      <h2>新年のご挨拶。明けましておめでとうございます。</h2>
+    </div>
+　　<hr width="90%">
+   <div class="article2">
+     <p class="main-text">旧年中は格別のご厚情を賜り、誠にありがとうございました。<br>本年も、現場に寄り添ったクラウドサービスの提供を通じて、皆さまの業務改善に貢献できるよう努めてまいります。<br>引き続き変わらぬご愛顧のほど、よろしくお願い申し上げます。<br>
+      皆さまにとって、実り多き一年となりますよう心よりお祈り申し上げます。</p>
+   </div>
+   <div class="renews">
+    <a href="news.html">お知らせ一覧に戻る</a>
+  </div>
+  </section>
+</body>
+
+<footer class="footer-wrapper">
+  <div class="footer-message-area">
+    <p class="footer-message">その紙、クラウドで生まれ変わる。<br>「使えるIT」を、現場の皆様のために。</p>
+    
+    <nav class="footer-links">
+      <a href="index.html">TOP</a>
+      <a href="about.html">ABOUT</a>
+      <a href="service.html">SERVICE</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="news.html">NEWS</a>
+      <a href="policy.html">POLICY</a>
+    </nav>
+
+    <div class="footer-consult">
+      <div class="consult-icon">✉</div>
+      <a href="contact.html">無料相談はこちら</a>
+      <div class="consult-arrow">＞</div>
+    </div>
+  </div>
+
+  <div class="footer-company-info">
+    <h2 class="company-name">株式会社エスコード</h2>
+    <div class="company-details">
+      <div class="company-left">
+        <p>〒123-4567</p>
+        <p>東京都中央区〇〇ビル12</p>
+        <p>mail : info@escode.co.jp</p>
+      </div>
+      <div class="company-right">
+        <p>受付時間：平日9：00~18：00</p>
+        <p>TEL：03-1234-5678</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <p>@ESCODE Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+</html>

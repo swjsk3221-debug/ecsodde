@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>株式会社エスコード</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="CA">株式会社エスコード<br><span class="sub">S-CODE Inc.</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="policy.html">POLICY</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".main-nav");
+
+    // メニューアイコンをクリックで表示切り替え
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove("show");
+      }
+    });
+  </script>
+   <section class="news-section">
+    <div class="newstext">
+      <p>お知らせ</p>
+      <h3>NEWS</h3>
+    </div>
+    <hr>
+      <div class="news-banner">
+        <div class="banner-text">
+          <p class="news-P">Instagramで情報発信をしております！</p>
+          <p>社内の様子や日々の取り組みを、発信しております。</p>
+        </div>
+        <div class="banner-logo">
+          <img src="imgs/insta-icon.png" width="50px" height="50px"></div>
+      </div>
+
+      <section class="news-list-wrapper">
+        <ul class="news-list">
+          <li>
+            <a href="2025-01-08.html">
+              <span class="news-date">2025.01.08</span>
+              <span class="news-title">新年のご挨拶。明けましておめでとうございます。</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2025-04-01.html">
+              <span class="news-date">2025.04.01</span>
+              <span class="news-title">今年度の入社式が行われました。</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2025-06-24.html">
+              <span class="news-date">2025.06.24</span>
+              <span class="news-title">社員旅行でアメリカに行きました！</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2024-07-15.html">
+              <span class="news-date">2024.07.15</span>
+              <span class="news-title">2026年度 新卒・中途採用を開始しました。</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2024-09-20.html">
+              <span class="news-date">2024.09.20</span>
+              <span class="news-title">「電子帳票自動化セミナー」開催レポートを公開しました</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2024-09-15.html">
+              <span class="news-date">2024.09.15</span>
+              <span class="news-title">ESC-HUBに『外注共有特化モジュール（β）』を追加しました</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2024-08-01.html">
+              <span class="news-date">2024.08.01</span>
+              <span class="news-title">ゴールデンウィーク休業のお知らせ</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2024-01-15.html">
+              <span class="news-date">2024.01.15</span>
+              <span class="news-title">新機能「タスク動画共有機能」を正式リリースしました</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="2024-01-20.html">
+              <span class="news-date">2024.01.20</span>
+              <span class="news-title">HPをリニューアルしました！</span>
+              <span class="news-arrow">→</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+</body>
+<footer class="footer-wrapper">
+  <div class="footer-message-area">
+    <p class="footer-message">その紙、クラウドで生まれ変わる。<br>「使えるIT」を、現場の皆様のために。</p>
+    
+    <nav class="footer-links">
+      <a href="index.html">TOP</a>
+      <a href="about.html">ABOUT</a>
+      <a href="service.html">SERVICE</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="news.html">NEWS</a>
+      <a href="policy.html">POLICY</a>
+    </nav>
+
+    <div class="footer-consult">
+      <div class="consult-icon">✉</div>
+      <a href="contact.html">無料相談はこちら</a>
+      <div class="consult-arrow">＞</div>
+    </div>
+  </div>
+
+  <div class="footer-company-info">
+    <h2 class="company-name">株式会社エスコード</h2>
+    <div class="company-details">
+      <div class="company-left">
+        <p>〒123-4567</p>
+        <p>東京都中央区〇〇ビル12</p>
+        <p>mail : info@escode.co.jp</p>
+      </div>
+      <div class="company-right">
+        <p>受付時間：平日9：00~18：00</p>
+        <p>TEL：03-1234-5678</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <p>@ESCODE Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>株式会社エスコード</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="CA">株式会社エスコード<br><span class="sub">S-CODE Inc.</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="policy.html">POLICY</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".main-nav");
+
+    // メニューアイコンをクリックで表示切り替え
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove("show");
+      }
+    });
+  </script>
+
+  <section class="contact">
+    <div class="context">
+      <p>お問い合わせ</p>
+      <h3>CONTACT</h3>
+    </div>
+    <div class="contaitl">
+      <hr>
+      <p>導入のご相談、資料請求、その他のお問い合わせはこちらから。<br>
+
+        株式会社エスコードでは、サービスに関するご相談やお見積もり依頼、機能に関するご質問など、どんな内容でもお気軽にお問い合わせいただけます。</p>
+    </div>
+    
+    <div class="contact-wrapper">
+      <div class="conbox">
+        <div class="conbox1">
+          <a href="mailto:info@escode.co.jp">
+            メールアドレスでのお問い合わせはこちら
+            <span class="con1">info@escode.co.jp</span>
+          </a>
+        </div>
+      </div>
+      <div class="conmemo">
+        <p>※24時間受付/返信は営業時間内に行っております。</p>
+      </div>
+    
+      <div class="conbox">
+        <div class="conbox1">
+          <a href="mailto:info@escode.co.jp">
+            電話でのお問い合わせはこちら
+            <span class="con2">03-1234-5678(平日10:00~17:00)</span>
+          </a>
+        </div>
+      </div>
+      <div class="conmemo">
+        <p>※混雑時は折り返しのご連絡とさせていただく場合がございます。</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact-form">
+    <form action="#" method="post">
+      
+      <div class="form-group">
+        <label>会社名 <span class="required">必須</span></label>
+        <input type="text" name="company" placeholder="※個人の方は「個人」とご記入ください" required>
+      </div>
+  
+      <div class="form-group">
+        <label>ご担当者名 <span class="required">必須</span></label>
+        <input type="text" name="name" placeholder="例：山田 太郎" required>
+      </div>
+  
+      <div class="form-group">
+        <label>メールアドレス <span class="required">必須</span></label>
+        <input type="email" name="email" required>
+      </div>
+  
+      <div class="form-group">
+        <label>電話番号 <span class="optional">任意</span></label>
+        <input type="tel" name="tel" placeholder="※迅速なご連絡が必要な場合に活用します">
+      </div>
+  
+      <div class="form-group">
+        <label>お問い合わせ種別 <span class="required">必須</span></label>
+        <select name="category" required>
+          <option value="">選択してください</option>
+          <option>プレスリリース関連</option>
+          <option>サービスについて</option>
+          <option>導入・料金の相談</option>
+          <option>デモ・資料請求</option>
+          <option>その他</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label>お問い合わせ内容 <span class="required">必須</span></label>
+        <textarea name="message" rows="6" placeholder="自由入力欄（500文字程度）" required></textarea>
+      </div>
+  
+      <div class="form-group checkbox-group">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" name="privacy" required>
+          <span class="checkmark"></span>
+          当社の「プライバシーポリシー」に同意する。
+        </label>
+      </div>
+  
+      <div class="form-group">
+        <!-- <button type="submit"><a href="confirm.html">確認する</button></a> -->
+        <button type="submit" href="confirm.html">確認する</button></a>
+      </div>
+  
+    </form>
+  </section>
+</body>
+
+<footer class="footer-wrapper">
+  <div class="footer-message-area">
+    <p class="footer-message">その紙、クラウドで生まれ変わる。<br>「使えるIT」を、現場の皆様のために。</p>
+    
+    <nav class="footer-links">
+      <a href="index.html">TOP</a>
+      <a href="about.html">ABOUT</a>
+      <a href="service.html">SERVICE</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="news.html">NEWS</a>
+      <a href="policy.html">POLICY</a>
+    </nav>
+
+    <div class="footer-consult">
+      <div class="consult-icon">✉</div>
+      <a href="contact.html">無料相談はこちら</a>
+      <div class="consult-arrow">＞</div>
+    </div>
+  </div>
+
+  <div class="footer-company-info">
+    <h2 class="company-name">株式会社エスコード</h2>
+    <div class="company-details">
+      <div class="company-left">
+        <p>〒123-4567</p>
+        <p>東京都中央区〇〇ビル12</p>
+        <p>mail : info@escode.co.jp</p>
+      </div>
+      <div class="company-right">
+        <p>受付時間：平日9：00~18：00</p>
+        <p>TEL：03-1234-5678</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <p>@ESCODE Inc. All rights reserved.</p>
+  </div>
+</footer>
+</html>

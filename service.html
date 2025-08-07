@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>株式会社エスコード</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="CA">株式会社エスコード<br><span class="sub">S-CODE Inc.</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="policy.html">POLICY</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".main-nav");
+
+    // メニューアイコンをクリックで表示切り替え
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove("show");
+      }
+    });
+  </script>
+
+<section class="service">
+  
+  <div class="sertext">
+    <p>支援内容</p>
+    <h3>SERVICE</h3>
+  </div>
+  <hr class="ser-hr">
+  <div class="ser-item">
+    <div class="ser-text">
+      <h2>Our Solutions</h2>
+      <h1>現場業務を、もっとスムーズに</h1>
+    </div>
+
+    <section class="slideshow" aria-label="画像スライドショー">
+      <div class="slides">
+        <!-- 画像をここに追加（最低1枚） -->
+        <div class="slide" data-index="0"><img src="imgs/service.jpg" alt="説明1"></div>
+        <div class="slide" data-index="1"><img src="imgs/service2.jpg" alt="説明2"></div>
+        <div class="slide" data-index="2"><img src="imgs/service-3.jpg" alt="説明3"></div>
+        <!-- 必要に応じて複製 -->
+      </div>
+  
+      <!-- 左右ボタン -->
+      <button class="prev" aria-label="前の画像">‹</button>
+      <button class="next" aria-label="次の画像">›</button>
+      
+    </section>
+  
+    <script src="slideshow.js"></script>
+  </div>
+  <div class="ser-item1">
+    <div class="ser-item2">
+      <p>エスコードが提供するクラウドサービスは、紙での煩雑な業務や、<br>電話・FAX中心のやり取りをクラウドでスマートに変えることを目的としています。
+      <p class="ser1">導入もサポートも、すべて現場目線。だから、誰でもすぐに使い始めることができます。</p>
+    </div>
+  </div>
+    <p class="ser">小さな現場でも無理なく使える業務支援ツールと<br>導入・定着の伴走支援をご用意しています。</p>
+
+  <div class="Toul">
+      <div class="t-text">
+       <p>クラウド業務支援ツール</p>
+      </div>
+      <div class="t-item-top">
+        <div class="toul-item">
+          <img src="imgs/book.png" width="70px" height="70px">
+          <h2>日報管理、<br>進捗共有クラウド</h2>
+          <p>現場の日報や進捗をリアルタイムで
+            共有・確認。 紙・Excelから脱却できます。</p>
+        </div>
+        <div class="toul-item">
+          <img src="imgs/memo.png" width="70px" height="70px">
+          <h2>電子帳票、 <br>請求書の自動発行</h2>
+          <p>帳票や請求書の作成・送付を
+            ワンクリックで完結。ミスと手間を削減。</p>
+        </div>
+        <div class="toul-item">
+          <img src="imgs/men.png" width="70px" height="70px">
+          <h2>顧客対応共有ノート<br>（CRM機能）</h2>
+          <p>顧客とのやり取りをチームで共有。
+            属人化を防ぎ、誰でも対応可能に。</p>
+        </div>
+      </div>
+      <div class="t-item-bottom">
+        <div class="toul-item">
+          <img src="imgs/video.png" width="70px" height="70px">
+          <h2>タスク・マニュアルの<br>動画共有機能</h2>
+          <p>作業指示や業務のコツを動画＋チェックリストで共有。
+            教育・引き継ぎがスムーズ。</p>
+        </div>
+        <div class="toul-item">
+          <img src="imgs/bel.png" width="70px" height="70px">
+          <h2>社内掲示、通知クラウド</h2>
+          <p>全社・拠点ごとのお知らせを即時配信。 掲示板や紙回覧をクラウド化し、情報共有をスピードアップ。</p>
+        </div>
+        </div>
+    
+      <div class="t-text">
+        <p>クラウド業務支援ツール</p>
+      </div>
+      <div class="step-list">
+        <div class="step-row">
+          <div class="step-indicator">
+            <div class="step-circle">01</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h2>専任担当による導入設計</h2>
+            <p class="step-text">現場の業務に合わせて最適な導入プランを設計。 <br>
+              無理なくスタート可能。</p>
+          </div>
+        </div>
+      
+        <div class="step-row">
+          <div class="step-indicator">
+            <div class="step-circle">02</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h2>オンライン研修（30分～）</h2>
+            <p class="step-text">誰でもすぐに使えるよう、短時間の研修で直感的に操作を習得。<br> 無理なくスタート可能。</p>
+          </div>
+        </div>
+      
+        <div class="step-row">
+          <div class="step-indicator">
+            <div class="step-circle">03</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h2>社内展開用の簡易マニュアル・動画作成</h2>
+            <p class="step-text">社内で広げやすいように、現場目線のマニュアルや動画を個別に提供。 <br>無理なくスタート可能。</p>
+          </div>
+        </div>
+      
+        <div class="step-row">
+          <div class="step-indicator">
+            <div class="step-circle">04</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h2>導入後の月次サポート（利用状況レポート＋改善提案）</h2>
+            <p class="step-text">活用状況を見える化し、現場に合わせた改善提案で“使われ続ける <br>”状態を支援。無理なくスタート可能。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <section class="pricing-section" aria-label="Plans & Pricing">
+        <div class="pricing-inner">
+          <h2 class="pricing-title">Plans & Pricing</h2>
+          <p class="pricing-sub">ご利用規模や業務内容に応じた柔軟なプランをご用意しています。</p>
+      
+          <div class="pricing-cards">
+            <article class="card">
+              <div class="card-inner">
+                <h3 class="card-name">Smart Plan</h3>
+                <p class="card-kv">小規模事業者向け</p>
+      
+                <div class="price">
+                 
+                  <div class="price-value"> <span class="price-label">月額</span>
+                    9,800 <span class="yen">円</span></div>
+                  <div class="price-subtext">（税込）〜</div>
+                </div>
+      
+                <hr class="card-hr">
+      
+                <h4 class="card-feature-title">基本機能</h4>
+                <ul class="card-features">
+                  <li>報告書・帳票・請求書管理など</li>
+                  <li>メール / チャット対応サポート</li>
+                </ul>
+              </div>
+            </article>
+      
+            <article class="card">
+              <div class="card-inner">
+                <h3 class="card-name">Business Plan</h3>
+                <p class="card-kv">報告書・帳票・請求書管理など</p>
+      
+                <div class="price">
+                  <div class="price-value">
+                    <span class="price-label">月額</span>29,800 <span class="yen">円</span></div>
+                  <div class="price-subtext">（税込）〜</div>
+                </div>
+      
+                <hr class="card-hr">
+      
+                <h4 class="card-feature-title">全機能</h4>
+                <ul class="card-features">
+                  <li>業務テンプレート</li>
+                  <li>導入支援＋月次レポート</li>
+                </ul>
+              </div>
+            </article>
+      
+            <article class="card">
+              <div class="card-inner">
+                <h3 class="card-name">Enterprise Plan</h3>
+                <p class="card-kv">多拠点・多部署対応</p>
+      
+                <div class="price">
+                  
+                  <div class="price-value"><span class="price-label">月額</span>
+                    お見積りベース</div>
+                  <div class="price-subtext">（税込）〜</div>
+                </div>
+      
+                <hr class="card-hr">
+      
+                <h4 class="card-feature-title">全機能</h4>
+                <ul class="card-features">
+                  <li>カスタムAPI連携</li>
+                  <li>専任担当＋定着支援フルパック</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+      
+          <p class="pricing-note">※いずれのプランも初期費用が別途発生します。<br>表示価格はすべて税込です。</p>
+      
+          <div class="pricing-cta-wrap">
+            <p class="pricing-cta-lead">詳細な費用・導入の流れについては、お気軽にお問い合わせください。</p>
+            <a href="contact.html" class="pricing-cta">無料相談はこちら　＞</a>
+          </div>
+  
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.slides');
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const dotsWrap = document.querySelector('.dots');
+  
+    if (!track || slides.length === 0) return;
+  
+    let current = 0;
+    const total = slides.length;
+    const interval = 4000; // ミリ秒：自動切替間隔
+    let timer = null;
+    let playing = true;
+  
+    // ドットを動的に作る
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+      b.setAttribute('aria-label', `スライド ${i+1}`);
+      b.dataset.index = i;
+      dotsWrap.appendChild(b);
+    });
+    // const dots = Array.from(dotsWrap.querySelectorAll('button'));
+  
+    // スライド描画
+    function goTo(index) {
+      current = (index + total) % total;
+      const translateX = -current * 100;
+      track.style.transform = `translateX(${translateX}%)`;
+      updateDots();
+    }
+  
+    function updateDots() {
+      dots.forEach((d, i) => d.setAttribute('aria-selected', i === current ? 'true' : 'false'));
+    }
+  
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+  
+    // 自動再生
+    function startAuto() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(next, interval);
+      playing = true;
+      playPause.textContent = '⏸';
+      playPause.setAttribute('aria-pressed', 'false');
+    }
+    function stopAuto() {
+      if (timer) clearInterval(timer);
+      timer = null;
+      playing = false;
+      playPause.textContent = '▶';
+      playPause.setAttribute('aria-pressed', 'true');
+    }
+  
+    // イベント
+    nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+    prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+    dots.forEach(d => {
+      d.addEventListener('click', (e) => {
+        const idx = parseInt(e.currentTarget.dataset.index, 10);
+        goTo(idx);
+        resetAuto();
+      });
+    });
+  
+    // ホバーで一時停止（マウスのみ）
+    const slideshow = document.querySelector('.slideshow');
+    slideshow.addEventListener('mouseenter', () => { stopAuto(); });
+    slideshow.addEventListener('mouseleave', () => { startAuto(); });
+  
+    // キーボード操作（左右）
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { next(); resetAuto(); }
+      if (e.key === 'ArrowLeft') { prev(); resetAuto(); }
+    });
+  
+    // 自動再生リセット（操作後に再開）
+    function resetAuto() {
+      if (playing === false) return; // 一時停止だったら再開しない
+      if (timer) {
+        clearInterval(timer);
+        timer = setInterval(next, interval);
+      }
+    }
+  
+    // 初期化
+    goTo(0);
+    startAuto();
+  });
+</script>
+</body>
+<footer class="footer-wrapper">
+  <div class="footer-message-area">
+    <p class="footer-message">その紙、クラウドで生まれ変わる。<br>「使えるIT」を、現場の皆様のために。</p>
+    
+    <nav class="footer-links">
+      <a href="index.html">TOP</a>
+      <a href="about.html">ABOUT</a>
+      <a href="service.html">SERVICE</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="news.html">NEWS</a>
+      <a href="policy.html">POLICY</a>
+    </nav>
+
+    <div class="footer-consult">
+      <div class="consult-icon">✉</div>
+      <a href="contact.html">無料相談はこちら</a>
+      <div class="consult-arrow">＞</div>
+    </div>
+  </div>
+
+  <div class="footer-company-info">
+    <h2 class="company-name">株式会社エスコード</h2>
+    <div class="company-details">
+      <div class="company-left">
+        <p>〒123-4567</p>
+        <p>東京都中央区〇〇ビル12</p>
+        <p>mail : info@escode.co.jp</p>
+      </div>
+      <div class="company-right">
+        <p>受付時間：平日9：00~18：00</p>
+        <p>TEL：03-1234-5678</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <p>@ESCODE Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+</html>

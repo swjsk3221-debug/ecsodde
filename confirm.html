@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>お問い合わせ内容の確認</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .confirm-section {
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #c9dbe6;
+      font-family: "Helvetica", sans-serif;
+    }
+    .concheck{
+      background-color: white;
+      margin-left: -32px;
+      margin-right: -32px;
+      margin-top: -32px;
+    }
+    .concheck p{
+      color: rgb(63, 162, 192);
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 30px;
+      padding-top: 30px;
+      /* margin-top: 50px; */
+    }
+    .concheck h2{
+      color: rgb(63, 162, 192);
+      margin-bottom: 80px;
+    }
+    .chek-sec{
+      width: 80%;
+      height: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .chek-sec .co{
+      font-size: 27px;
+    }
+    .chek-sec .con{
+      width: 65%;
+      color: black;
+      font-size: 18px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .confirm-group {
+      margin-bottom: 1.5rem;
+      margin-top: 5rem;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .confirm-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .confirm-value {
+      background: white;
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+    }
+    .btn-group {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+    }
+    .back-btn {
+      background-color: #888;
+    }
+    .submit-btn {
+      background: linear-gradient(to right, #195770, #5b9bb3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="CA">株式会社エスコード<br><span class="sub">S-CODE Inc.</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="policy.html">POLICY</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".main-nav");
+
+    // メニューアイコンをクリックで表示切り替え
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove("show");
+      }
+    });
+  </script>
+  <section class="confirm-section">
+    <div class="concheck">
+      <div class="chek-sec">
+        <p class="conp">お問い合わせ</p>
+        <h2 class="co">CONTACT</h2>
+        <h2 class="con">以下の内容で送信します。<br>よろしければ「送信する」をクリックしてください。</h2>
+    </div>
+    </div>
+    
+
+    <form action="complete.html" method="post">
+      <div class="confirm-group">
+        <label>会社名</label>
+        <div class="confirm-value">株式会社〇〇</div>
+      </div>
+
+      <div class="confirm-group">
+        <label>ご担当者名</label>
+        <div class="confirm-value">山田 太郎</div>
+      </div>
+
+      <div class="confirm-group">
+        <label>メールアドレス</label>
+        <div class="confirm-value">example@example.com</div>
+      </div>
+
+      <div class="confirm-group">
+        <label>電話番号</label>
+        <div class="confirm-value">03-0000-0000</div>
+      </div>
+
+      <div class="confirm-group">
+        <label>お問い合わせ種別</label>
+        <div class="confirm-value">導入・料金の相談</div>
+      </div>
+
+      <div class="confirm-group">
+        <label>お問い合わせ内容</label>
+        <div class="confirm-value">フォームの件について相談したいです。</div>
+      </div>
+
+      <div class="confirm-group">
+        <label>プライバシーポリシーへの同意</label>
+        <div class="confirm-value">同意する</div>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="back-btn" onclick="history.back()">戻る</button>
+        <button type="submit" class="submit-btn">送信する</button>
+      </div>
+    </form>
+  </section>
+
+</body>
+</html>
