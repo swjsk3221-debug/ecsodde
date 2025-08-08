@@ -73,12 +73,11 @@
     <script src="slideshow.js"></script>
   </div>
   <div class="ser-item1">
-    <div class="ser-item2">
-      <p>エスコードが提供するクラウドサービスは、紙での煩雑な業務や、<br>電話・FAX中心のやり取りをクラウドでスマートに変えることを目的としています。
-      <p class="ser1">導入もサポートも、すべて現場目線。だから、誰でもすぐに使い始めることができます。</p>
-    </div>
+    <p>エスコードが提供するクラウドサービスは、紙での煩雑な業務や、電話・FAX中心のやり取りをクラウドでスマートに変えることを目的としています。</p>
+    <p class="ser1">導入もサポートも、すべて現場目線。だから、誰でもすぐに使い始めることができます。</p>
   </div>
-    <p class="ser">小さな現場でも無理なく使える業務支援ツールと<br>導入・定着の伴走支援をご用意しています。</p>
+  
+  <p class="ser">小さな現場でも無理なく使える業務支援ツールと<br>導入・定着の伴走支援をご用意しています。</p>
 
   <div class="Toul">
       <div class="t-text">
@@ -249,97 +248,78 @@
   
 </section>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.slides');
-    const slides = Array.from(document.querySelectorAll('.slide'));
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const dotsWrap = document.querySelector('.dots');
-  
-    if (!track || slides.length === 0) return;
-  
-    let current = 0;
-    const total = slides.length;
-    const interval = 4000; // ミリ秒：自動切替間隔
-    let timer = null;
-    let playing = true;
-  
-    // ドットを動的に作る
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-      b.setAttribute('aria-label', `スライド ${i+1}`);
-      b.dataset.index = i;
-      dotsWrap.appendChild(b);
+ document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelector(".slides");
+  const slideItems = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  let currentIndex = 0;
+  const totalSlides = slideItems.length;
+  const intervalTime = 4000; // 自動再生間隔(ms)
+  let slideInterval;
+
+  // ドット作成
+  const dotsContainer = document.createElement("div");
+  dotsContainer.classList.add("dots");
+  slideItems.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.setAttribute("aria-label", `${index + 1}番目のスライドへ`);
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateSlide();
+      resetInterval();
     });
-    // const dots = Array.from(dotsWrap.querySelectorAll('button'));
-  
-    // スライド描画
-    function goTo(index) {
-      current = (index + total) % total;
-      const translateX = -current * 100;
-      track.style.transform = `translateX(${translateX}%)`;
-      updateDots();
-    }
-  
-    function updateDots() {
-      dots.forEach((d, i) => d.setAttribute('aria-selected', i === current ? 'true' : 'false'));
-    }
-  
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-  
-    // 自動再生
-    function startAuto() {
-      if (timer) clearInterval(timer);
-      timer = setInterval(next, interval);
-      playing = true;
-      playPause.textContent = '⏸';
-      playPause.setAttribute('aria-pressed', 'false');
-    }
-    function stopAuto() {
-      if (timer) clearInterval(timer);
-      timer = null;
-      playing = false;
-      playPause.textContent = '▶';
-      playPause.setAttribute('aria-pressed', 'true');
-    }
-  
-    // イベント
-    nextBtn.addEventListener('click', () => { next(); resetAuto(); });
-    prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
-    dots.forEach(d => {
-      d.addEventListener('click', (e) => {
-        const idx = parseInt(e.currentTarget.dataset.index, 10);
-        goTo(idx);
-        resetAuto();
-      });
-    });
-  
-    // ホバーで一時停止（マウスのみ）
-    const slideshow = document.querySelector('.slideshow');
-    slideshow.addEventListener('mouseenter', () => { stopAuto(); });
-    slideshow.addEventListener('mouseleave', () => { startAuto(); });
-  
-    // キーボード操作（左右）
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') { next(); resetAuto(); }
-      if (e.key === 'ArrowLeft') { prev(); resetAuto(); }
-    });
-  
-    // 自動再生リセット（操作後に再開）
-    function resetAuto() {
-      if (playing === false) return; // 一時停止だったら再開しない
-      if (timer) {
-        clearInterval(timer);
-        timer = setInterval(next, interval);
-      }
-    }
-  
-    // 初期化
-    goTo(0);
-    startAuto();
+    dotsContainer.appendChild(dot);
   });
+  document.querySelector(".slideshow").appendChild(dotsContainer);
+  const dots = dotsContainer.querySelectorAll("button");
+
+  // スライド更新
+  function updateSlide() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach(dot => dot.removeAttribute("aria-selected"));
+    dots[currentIndex].setAttribute("aria-selected", "true");
+  }
+
+  // 次へ
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  }
+
+  // 前へ
+  function prevSlideFunc() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  }
+
+  // 自動再生開始
+  function startSlideShow() {
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+
+  // 自動再生リセット
+  function resetInterval() {
+    clearInterval(slideInterval);
+    startSlideShow();
+  }
+
+  // イベント設定
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    resetInterval();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    prevSlideFunc();
+    resetInterval();
+  });
+
+  // 初期化
+  updateSlide();
+  startSlideShow();
+});
 </script>
 </body>
 <footer class="footer-wrapper">
@@ -352,7 +332,7 @@
       <a href="service.html">SERVICE</a>
       <a href="contact.html">CONTACT</a>
       <a href="news.html">NEWS</a>
-      <a href="policy.html">POLICY</a>
+      <a href="policy.">POLICY</a>
     </nav>
 
     <div class="footer-consult">
