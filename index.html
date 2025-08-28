@@ -27,30 +27,40 @@
   </header>
 
   <main>
-    <div class="CAM-logo">
-      <img src="imgs/logo.png" alt="会社ロゴ" width="400" height="400" />
+   <!-- ロゴ部分 -->
+    <div class="logo-conteinner">
+      <div class="CAM-logo"> 
+        <span class="logo-letter s">S</span> 
+        <span class="logo-letter c">C</span> 
+        <span class="logo-letter o">O</span> 
+        <span class="logo-letter d">D</span> 
+        <span class="logo-letter e">E</span> 
+      </div>
     </div>
     <section class="hero">
       <div class="hero1">
-      <h1>紙とFAXから、クラウドへ。<br>中小企業の未来を変えるDXパートナー</h1>
-    </div>
-      <div class="copy">
-        <div class="copy-1">
-          <p>
-            紙の帳票、ホワイトボードの予定表、FAXのやりとり——。<br>
-            日本の多くの中小企業が、今なお手作業を前提とした業務に縛られています。<br><br>
-            「うちはITが苦手だから」「今さら変えられない」そんな現場の不安に、<br>
-            私たちは技術ではなく“やさしさ”で応えます。<br><br>
-            DXは、難しいものだと思ってはいけない。<br>
-            だからこそ、エスコードのクラウドサービスは、<br>
-            誰でも・すぐに・自然に使いこなせる仕組みから設計されています。
-          </p>
-        </div>
-        <div class="cir">
-          <p>業務のムダを削減し、売上を伸ばす。<br>ITにが苦しい企業こそ、私たちの出番です。</p>
-        </div>
+        <h1>紙とFAXから、クラウドへ。<br>中小企業の未来を変えるDXパートナー</h1>
       </div>
     </section>
+
+
+  <div class="copy">
+    <div class="copy-1">
+      <p>
+        紙の帳票、ホワイトボードの予定表、FAXのやりとり——。<br>
+        日本の多くの中小企業が、今なお手作業を前提とした業務に縛られています。<br><br>
+        「うちはITが苦手だから」「今さら変えられない」そんな現場の不安に、<br>
+        私たちは技術ではなく“やさしさ”で応えます。<br><br>
+        DXは、難しいものだと思ってはいけない。<br>
+        だからこそ、エスコードのクラウドサービスは、<br>
+        誰でも・すぐに・自然に使いこなせる仕組みから設計されています。
+      </p>
+    </div>
+    <div class="cir">
+      <p>業務のムダを削減し、売上を伸ばす。<br>ITにが苦しい企業こそ、私たちの出番です。</p>
+    </div>
+  </div>
+    
 
     <section class="AP">
       <div class="AP-1"> 
@@ -358,6 +368,69 @@
     </section>
     
   </main>
+</body>
+
+    <!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const letters = document.querySelectorAll(".logo-letter");
+  const logo = document.querySelector(".CAM-logo");
+
+  // 文字が飛び出して重なるアニメーション
+  gsap.fromTo(letters,
+    {
+      scale: 0.05,
+      opacity: 0,
+      x: () => gsap.utils.random(-600, 600),
+      y: () => gsap.utils.random(-400, 400),
+      z: () => gsap.utils.random(-100, 100),
+      rotationX: () => gsap.utils.random(-720, 720),
+      rotationY: () => gsap.utils.random(-720, 720),
+      rotationZ: () => gsap.utils.random(-720, 720),
+      filter: "blur(8px)"
+    },
+    {
+      scale: 1,
+      opacity: 1,
+      x: 0, y: 0, z: 0,
+      rotationX: 0,
+      rotationY: 0,
+      rotationZ: 0,
+      filter: "blur(0px)",
+      duration: 2.2,
+      stagger: 0.25,
+      ease: "power4.out",
+      onComplete: () => {
+        // 完成後に微妙な揺れアニメーションを追加
+        logo.classList.add("final");
+      }
+    }
+  );
+
+  // ロゴ全体にズームイン＋立体感
+  gsap.fromTo(logo, 
+    { scale: 0.9, opacity: 0.8, rotationY: -10 }, 
+    { scale: 1, opacity: 1, rotationY: 0, duration: 3, ease: "power2.out", delay: 1 }
+  );
+});
+gsap.registerPlugin(ScrollTrigger);
+
+// hero1のテキストをスクロール時にフェードイン
+gsap.to(".hero1 h1", {
+  scrollTrigger: {
+    trigger: ".hero",  // 発火ポイント
+    start: "top 80%",  // ビューポートの80%位置で開始
+    toggleActions: "play none none reverse"
+  },
+  y: 0,
+  opacity: 1,
+  duration: 1.5,
+  ease: "power3.out"
+});
+
+</script>
 
   <script>
     const toggle = document.getElementById("menuToggle");
@@ -375,7 +448,6 @@
       }
     });
   </script>
-</body>
 <footer class="footer-wrapper">
   <div class="footer-message-area">
     <p class="footer-message">その紙、クラウドで生まれ変わる。<br>「使えるIT」を、現場の皆様のために。</p>
